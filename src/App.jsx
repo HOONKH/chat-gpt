@@ -1,12 +1,16 @@
+import { useState } from "react";
 import ChatBar from "./components/ChatBar";
+import ChatView from "./components/ChatView";
 
 const App = () => {
+  const [chatList, setChatList] = useState([]);
+
   return (
     <div className=" min-h-screen max-w-screen-md mx-auto flex">
-      <div className="bg-amber-200 w-52">Side</div>
+      <div className="bg-white-200 border-2 rounded-md w-52">Side</div>
       <div className="grow flex flex-col">
-        <div className="bg-green-200 grow">Main</div>
-        <ChatBar />
+        <ChatView chatList={chatList} />
+        <ChatBar chatList={chatList} setChatList={setChatList} />
       </div>
     </div>
   );
