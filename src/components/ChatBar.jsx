@@ -56,7 +56,7 @@ const ChatBar = ({ setChatList, chatList }) => {
         />
         <button
           className="hover:bg-green-600 active:bg-green-800 bg-green-400 w-28 py-[6px] rounded-md
-          text-sm font-semibold flex justify-center items-center animate-bouncein "
+          text-sm font-semibold flex justify-center items-center "
           type="submit"
           disabled={isLoading}
         >
