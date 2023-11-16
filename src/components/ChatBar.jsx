@@ -42,7 +42,7 @@ const ChatBar = ({ setChatList, chatList }) => {
   };
 
   return (
-    <div className="bg-blue-800 h-20 absolute bottom-0 w-full rounded-md">
+    <div className="bg-gray-400 h-20 absolute bottom-0 w-full rounded-t-md">
       <form onSubmit={onSubmitChat} className=" flex h-full items-center px-4">
         <input
           className={`ml-4 grow py-1 px-2 focus:outline-none border-2 focus:border-gray-300 mr-4 rounded-md ${
@@ -52,11 +52,11 @@ const ChatBar = ({ setChatList, chatList }) => {
           value={newQuestion}
           onChange={(e) => setNewQuestion(e.target.value)}
           disabled={isLoading}
-          placeholder="다 대답해줄게"
+          placeholder="Anything you wannna know"
         />
         <button
-          className="hover:bg-gray-600 active:bg-gray-800 bg-gray-400 w-28 py-[6px] rounded-md
-          text-sm text-gray-700 font-semibold flex justify-center items-center "
+          className="hover:bg-gray-600 active:bg-gray-800 bg-gray-600 w-28 py-[6px] rounded-md
+          text-sm text-gray-900 font-semibold flex justify-center items-center "
           type="submit"
           disabled={isLoading}
         >

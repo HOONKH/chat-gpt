@@ -8,7 +8,7 @@ const App = () => {
   const [chatList, setChatList] = useState([]);
 
   return (
-    <div className="min-h-screen bg-gray-800">
+    <div className="min-h-screen bg-gray-900">
       <div className=" min-h-screen max-w-screen-md mx-auto flex border-none">
         <ChatSide chatList={chatList} />
         <div className="grow flex flex-col relative">
