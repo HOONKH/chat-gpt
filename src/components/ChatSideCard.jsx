@@ -13,7 +13,7 @@ const ChatSideCard = ({ question, answer }) => {
   return (
     <Fragment>
       <li
-        className="mb-1 truncate cursor-pointer hover:font-bold"
+        className="mb-1 truncate cursor-pointer hover:font-bold mt-3"
         onClick={onClickModal}
       >
         {question}
@@ -24,8 +24,8 @@ const ChatSideCard = ({ question, answer }) => {
             <button className="text-2xl" onClick={onClickClose}>
               <FiArrowLeft />
             </button>
-            <div>{question}</div>
-            <div>{answer}</div>
+            <div>Q. {question}</div>
+            <div>A. {answer}</div>
           </div>
         </div>
       )}
