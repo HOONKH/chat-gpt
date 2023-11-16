@@ -11,7 +11,7 @@ const ChatBar = ({ setChatList, chatList }) => {
       setIsLoading(true);
 
       if (!newQuestion) return;
-      console.log(process.env.REACT_APP_OPEN_AI_KEY);
+
       const response = await axios.post(
         "https://api.openai.com/v1/chat/completions",
         {
@@ -42,10 +42,10 @@ const ChatBar = ({ setChatList, chatList }) => {
   };
 
   return (
-    <div className="bg-green-300 h-20">
+    <div className="bg-blue-800 h-20 absolute bottom-0 w-full rounded-md">
       <form onSubmit={onSubmitChat} className=" flex h-full items-center px-4">
         <input
-          className={`ml-4 grow py-1 px-2 focus:outline-none border-2 focus:border-green-300 mr-4 rounded-md ${
+          className={`ml-4 grow py-1 px-2 focus:outline-none border-2 focus:border-gray-300 mr-4 rounded-md ${
             isLoading && "bg-gray-100 text-gray-500"
           } `}
           type="text"
@@ -55,8 +55,8 @@ const ChatBar = ({ setChatList, chatList }) => {
           placeholder="다 대답해줄게"
         />
         <button
-          className="hover:bg-green-600 active:bg-green-800 bg-green-400 w-28 py-[6px] rounded-md
-          text-sm font-semibold flex justify-center items-center "
+          className="hover:bg-gray-600 active:bg-gray-800 bg-gray-400 w-28 py-[6px] rounded-md
+          text-sm text-gray-700 font-semibold flex justify-center items-center "
           type="submit"
           disabled={isLoading}
         >
