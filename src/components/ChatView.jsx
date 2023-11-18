@@ -8,7 +8,7 @@ const ChatView = ({ chatList }) => {
   }, [chatList]);
 
   return (
-    <div className=" h-screen max-w-[560px] flex flex-col justify-end rounded-r-md bg-gray-500">
+    <div className=" h-screen max-w-[560px] flex flex-col justify-end rounded-r-md bg-gray-500 ">
       <ul
         ref={ulRef}
         className="font-black mb-20 overflow-y-auto whitespace-pre-wrap "

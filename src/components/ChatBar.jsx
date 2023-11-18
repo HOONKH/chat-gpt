@@ -25,7 +25,9 @@ const ChatBar = ({ setChatList, chatList }) => {
           },
         }
       );
-      console.log(response);
+
+      // console.log(response);
+
       setChatList([
         ...chatList,
         {
@@ -33,6 +35,16 @@ const ChatBar = ({ setChatList, chatList }) => {
           answer: response.data.choices[0].message.content,
         },
       ]);
+
+      const saveChatList = [
+        ...chatList,
+        {
+          question: newQuestion,
+          answer: response.data.choices[0].message.content,
+        },
+      ];
+      localStorage.setItem("questions", JSON.stringify(saveChatList));
+
       setNewQuestion("");
       setIsLoading(false);
     } catch (error) {
@@ -40,12 +52,15 @@ const ChatBar = ({ setChatList, chatList }) => {
     }
     setIsLoading(false);
   };
+  useEffect(() => {
+    console.log(setChatList);
+  });
 
   return (
-    <div className="bg-gray-400 h-20 absolute bottom-0 w-full rounded-t-md">
+    <div className="bg-gray-400 h-20 absolute bottom-0 w-full rounded-t-md z-20">
       <form onSubmit={onSubmitChat} className=" flex h-full items-center px-4">
         <input
-          className={`ml-4 grow py-1 px-2 focus:outline-none border-2 focus:border-gray-300 mr-4 rounded-md ${
+          className={`ml-4 grow py-1 px-2 focus:outline-none border-2 focus:border-gray-300 text-[12px] mr-4 rounded-md ${
             isLoading && "bg-gray-100 text-gray-500"
           } `}
           type="text"
@@ -55,8 +70,8 @@ const ChatBar = ({ setChatList, chatList }) => {
           placeholder="Anything you wannna know"
         />
         <button
-          className="hover:bg-gray-600 active:bg-gray-800 bg-gray-600 w-28 py-[6px] rounded-md
-          text-sm text-gray-900 font-semibold flex justify-center items-center "
+          className="hover:bg-gray-700 active:bg-gray-800 bg-gray-600 w-28 py-[6px] rounded-md
+          text-[12px] text-gray-900 font-black flex justify-center items-center "
           type="submit"
           disabled={isLoading}
         >
