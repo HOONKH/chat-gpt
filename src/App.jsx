@@ -24,14 +24,14 @@ const App = () => {
     <div className="min-h-screen bg-gray-900 relative flex">
       <div className="absolute">
         <img
-          className="fixed rounded-xl h-[920px]"
+          className="fixed rounded-xl  h-[920px]"
           src="./images/money.jpg"
           alt="money"
         />
       </div>
       <div className=" min-h-screen max-w-screen-md mx-auto flex border-none">
         <ChatSide chatList={chatList} />
-        <div className="grow flex flex-col relative">
+        <div className=" flex flex-col relative">
           <ChatView chatList={chatList} />
           <ChatBar chatList={chatList} setChatList={setChatList} />
         </div>

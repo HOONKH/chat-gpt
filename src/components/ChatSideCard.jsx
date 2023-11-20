@@ -3,6 +3,23 @@ import { FiArrowLeft } from "react-icons/fi";
 import { ImBin } from "react-icons/im";
 
 const ChatSideCard = ({ question, answer }) => {
+  const onClickDel = () => {
+    const localChatList = localStorage.getItem("questions");
+
+    if (!localChatList) return;
+
+    const parsedChatList = JSON.parse(localChatList);
+
+    const deletedChatList = parsedChatList.filter((v) => {
+      return v.answer !== answer;
+    });
+    if (deletedChatList === 0) {
+      localStorage.removeItem("question");
+    } else {
+      localStorage.setItem("questions", JSON.stringify(deletedChatList));
+    }
+  };
+
   const [isOpen, setIsOpen] = useState(false);
   const onClickClose = () => {
     setIsOpen(false);
@@ -28,7 +45,7 @@ const ChatSideCard = ({ question, answer }) => {
             >
               <FiArrowLeft />
             </button>
-            <button>
+            <button onClick={onClickDel}>
               <ImBin className="ml-3 text-lg mb-0.5" />
             </button>
             <div>Q. {question}</div>
