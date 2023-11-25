@@ -35,6 +35,7 @@ const ChatBar = ({ setChatList, chatList }) => {
           answer: response.data.choices[0].message.content,
         },
       ]);
+      localStorage.setItem("questions", JSON.stringify(setChatList));
 
       const saveChatList = [
         ...chatList,

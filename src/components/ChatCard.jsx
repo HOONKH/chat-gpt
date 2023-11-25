@@ -9,7 +9,7 @@ const ChatCard = ({ answer, question }) => {
   const formattedTime = ` ${hour}:${zeromin} ${ampm}`;
 
   return (
-    <li className=" flex flex-col gap-4 mt-3 mb-1 bg z-20">
+    <li className=" flex flex-col gap-4 mt-3 mb-1 z-20">
       <div className="bg-gray-300 px-4 py-1 self-start text-[12px] rounded-md ml-1 shadow-lg font-lg shadow-blue-700">
         <DiAtom className="text-3xl" />
         {answer}

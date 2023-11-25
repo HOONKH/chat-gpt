@@ -30,7 +30,7 @@ const App = () => {
         />
       </div>
       <div className=" min-h-screen max-w-screen-md mx-auto flex border-none">
-        <ChatSide chatList={chatList} />
+        <ChatSide chatList={chatList} setChatList={setChatList} />
         <div className=" flex flex-col relative">
           <ChatView chatList={chatList} />
           <ChatBar chatList={chatList} setChatList={setChatList} />
